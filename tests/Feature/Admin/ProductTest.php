@@ -83,12 +83,12 @@ class ProductTest extends TestCase
         $this->sendActionRequest(['status' => 1], 200, $uri, 'post');
     }
 
-    // public function test_destroy_product_api()
-    // {
-    //     $product_id = $this->fakeData()->id;
-    //     $uri = '/admin/product' . '/' . $product_id;
-    //     $this->sendActionRequest([], 200, $uri, 'delete');
-    // }
+    public function test_destroy_product_api()
+    {
+        $product_id = $this->fakeData()->id;
+        $uri = '/admin/product' . '/' . $product_id;
+        $this->sendActionRequest([], 200, $uri, 'delete');
+    }
 
     public function test_update_product_api()
     {
