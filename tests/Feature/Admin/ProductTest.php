@@ -23,7 +23,7 @@ class ProductTest extends TestCase
 
     private function setAuthUser()
     {
-        $user = User::where('email', 'admin@gmail.com')->first();
+        $user = User::factory()->create();
         $this->actingAs($user, 'admin');
     }
 
