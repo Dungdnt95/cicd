@@ -50,7 +50,7 @@ jobs:
         env:
           DB_CONNECTION: sqlite
           DB_DATABASE: database/database.sqlite
-        run: php artisan test --filter=ProductTest
+        run: php artisan test
 
       # - name: Check the duplicate code in app directory
       #   run: ./vendor/bin/phpcpd app/ --min-lines=5 --min-tokens=10
