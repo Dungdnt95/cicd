@@ -33,7 +33,7 @@ class UserControllerTest extends TestCase
     }
 
     //no permission
-    public function test_store_2()
+    public function test_store_1()
     {
         $password = Str::random(8);
         $response = $this->json(
@@ -51,7 +51,7 @@ class UserControllerTest extends TestCase
     }
 
     //max length
-    public function test_store_3()
+    public function test_store_2()
     {
         $this->withoutMiddleware();
         $password = Str::random(16);
@@ -78,7 +78,7 @@ class UserControllerTest extends TestCase
     }
 
     //password is not same
-    public function test_store_4()
+    public function test_store_3()
     {
         $this->withoutMiddleware();
         $password = Str::random(8);
@@ -101,7 +101,7 @@ class UserControllerTest extends TestCase
 
 
     //empty data
-    public function test_store_7()
+    public function test_store_4()
     {
         $this->withoutMiddleware();
         $response = $this->json(
@@ -127,7 +127,7 @@ class UserControllerTest extends TestCase
 
 
     //no permission
-    public function test_update_2()
+    public function test_update_1()
     {
         $password = Str::random(8);
         $user = User::factory()->create();
@@ -145,7 +145,7 @@ class UserControllerTest extends TestCase
     }
 
     //max length
-    public function test_update_3()
+    public function test_update_2()
     {
         $this->withoutMiddleware();
         $user = User::factory()->create();
@@ -171,7 +171,7 @@ class UserControllerTest extends TestCase
         $response->assertStatus(422);
     }
     //password is not same
-    public function test_update_4()
+    public function test_update_3()
     {
         $this->withoutMiddleware();
         $user = User::factory()->create();
@@ -193,7 +193,7 @@ class UserControllerTest extends TestCase
     }
 
     //empty data
-    public function test_update_7()
+    public function test_update_4()
     {
         $this->withoutMiddleware();
         $user = User::factory()->create();
@@ -215,7 +215,7 @@ class UserControllerTest extends TestCase
         $response->assertStatus(422);
     }
     //user not found
-    public function test_update_8()
+    public function test_update_5()
     {
         $this->withoutMiddleware();
         $response = $this->json(
